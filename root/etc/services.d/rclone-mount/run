@@ -7,7 +7,7 @@ if [ -z "$RCLONE_REMOTE_MOUNT" ]; then
   exit 1
 fi
 
-mount_command="rclone mount --config=/config/.rclone.conf --allow-other $RCLONE_MOUNT_OPTIONS $RCLONE_REMOTE_MOUNT /data"
+mount_command="rclone mount $RCLONE_REMOTE_MOUNT /data --config=/config/.rclone.conf --allow-other $RCLONE_MOUNT_OPTIONS"
 
 echo "Executing => $mount_command"
 exec \
